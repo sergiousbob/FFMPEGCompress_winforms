@@ -21,6 +21,7 @@ namespace FFMPEGCompress
         {
             InitializeComponent();
             comboBox1.SelectedItem = "lossless";
+            comboBox2.SelectedItem = "avi";
             this.BackColor = Color.Aquamarine;
         }
 
@@ -30,7 +31,7 @@ namespace FFMPEGCompress
         void asyncBtn()
         {
             int a = 1;
-
+            button1.Enabled = false;
 
             if (comboBox1.SelectedItem == "lossless")
             {
@@ -55,7 +56,7 @@ namespace FFMPEGCompress
 
             string directoryPath = $"{textBox1.Text}";
             string directoryOut = $@"{textBox2.Text}";
-            string[] aviFiles = Directory.GetFiles(directoryPath, "*.avi");
+            string[] aviFiles = Directory.GetFiles(directoryPath, $"*.{comboBox2.Text}");
   
 
             foreach (string aviFile in aviFiles)
@@ -65,7 +66,7 @@ namespace FFMPEGCompress
 
 
 
-
+               
 
                 string naimen = $@"{textBox2.Text}\VideoConvert{a}";
          
@@ -88,6 +89,8 @@ namespace FFMPEGCompress
                 string output = process.StandardOutput.ReadToEnd();
  
             }
+            MessageBox.Show("All videos have been processed!!!");
+            button1.Enabled = true;
         }
 
 
@@ -101,27 +104,6 @@ namespace FFMPEGCompress
         private async void button1_Click(object sender, EventArgs e)
         {
             await Task.Run(() => asyncBtn());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         }
 
