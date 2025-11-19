@@ -72,7 +72,7 @@ namespace FFMPEGCompress
          
 
 
-                process.StartInfo.Arguments = $"-i {aviFile} -vcodec libx265 -crf {crf_video} -preset faster {naimen}.mp4";
+                process.StartInfo.Arguments = $"-i {aviFile} -vcodec libx265 -crf {crf_video} -preset ultrafast {naimen}.mp4";
                 a++;
 
 
