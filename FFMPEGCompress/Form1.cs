@@ -22,7 +22,7 @@ namespace FFMPEGCompress
             InitializeComponent();
             comboBox1.SelectedItem = "worst";
             comboBox2.SelectedItem = "avi";
-            comboBox3.SelectedItem = "avi";
+           /// comboBox3.SelectedItem = "avi";
             comboBox4.SelectedItem = "worst";
             this.BackColor = Color.Aquamarine;
         }
